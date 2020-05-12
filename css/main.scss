@@ -25,11 +25,22 @@ body {
 
     .grad-div {
         display:flex; 
+        position: relative;
         outline: 1px solid rgba(25, 25, 25, .5);
         box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 1);
         align-content: center;
         justify-content: center;
 
+        &::before {
+            content:'';
+            position: absolute;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            background: transparent;
+            transition: background .35s ease-out;
+        }
         h1 {
             display: none;
             align-self: center;
@@ -41,8 +52,7 @@ body {
         }
         &:hover {
             &::before {    
-            content: '';
-            background-color: black;
+            background: transparentize(black,.4);
             }
         
             h1 {
