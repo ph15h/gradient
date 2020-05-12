@@ -12,6 +12,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans', sans-serif;
 
 }
 
@@ -26,9 +27,28 @@ body {
         display:flex; 
         outline: 1px solid rgba(25, 25, 25, .5);
         box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 1);
+        align-content: center;
+        justify-content: center;
 
         h1 {
-            font: 2rem;
+            display: none;
+            align-self: center;
+            font-size: 5em;
+            text-align: center;;
+            color: white;
+            font-weight: 600;
+            -webkit-text-stroke: 3px black;
+        }
+        &:hover {
+            &::before {    
+            content: '';
+            background-color: black;
+            }
+        
+            h1 {
+            display: block;
+            animation-delay: 1s;
+            }
         }
     }
 }
@@ -38,8 +58,6 @@ body {
     linear-gradient(33deg, rgba(0,25, 100, 1), transparent),
     ;
 }
-
-
 
 .blue-cream-stripe {
     background: 
