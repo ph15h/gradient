@@ -39,7 +39,8 @@ body {
             bottom:0;
             left:0;
             background: transparent;
-            transition: background .35s ease-out;
+            transition: background .65s ease-out;
+            z-index: 0;
         }
         h1 {
             display: none;
@@ -49,6 +50,7 @@ body {
             color: white;
             font-weight: 600;
             -webkit-text-stroke: 3px black;
+            z-index: 108;
         }
         &:hover {
             &::before {    
@@ -57,7 +59,6 @@ body {
         
             h1 {
             display: block;
-            animation-delay: 1s;
             }
         }
     }
@@ -75,18 +76,21 @@ body {
     repeating-linear-gradient(45deg, $lightblue 0%, $lightblue 5%, transparent 5%, transparent 10%),
     $cream;
 }
+
 .yellow-white-stripe {
     background: 
     linear-gradient(45deg, transparentize($cream, .05), transparent),
     repeating-linear-gradient(45deg, $cream 0%, $white 5%, transparent 5%, transparent 10%),
     $yellow;
 }
+
 .blue-cream-check {
     background: 
     linear-gradient(45deg, transparentize($lightblue, .35), transparent),
     repeating-linear-gradient(45deg, transparentize($lightblue,0.2) 0%, transparentize($lightblue, .2) 5%, transparent 5%, transparent 10%),
     rgba(255,253,220, 1) repeating-linear-gradient(-45deg, rgba(225, 243, 255, 0.8) 0%, rgba(203,235,255, .8) 5%, transparent 5%, transparent 10%);
 }
+
 .yellow-white-check {
     background: 
     linear-gradient(45deg, rgba(250, 255, 140, 0.35), transparent),
@@ -104,6 +108,7 @@ body {
     
     ;
 }
+
 .polka-dot-lots {
     background:
     radial-gradient($yellow 20%, transparent 20%),
