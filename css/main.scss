@@ -70,6 +70,17 @@ body {
     ;
 }
 
+.vertical-stripes {
+    background-color: $cream;
+    background-image: linear-gradient(90deg, transparent 50%, $lightblue 50%);
+    background-size: 50px 50px;
+}
+.horizontal-stripes {
+    background-color: $cream;
+    background-image: linear-gradient(transparent 50%, $lightblue 50%);
+    background-size: 50px 50px;
+}
+
 .blue-cream-stripe {
     background: 
     linear-gradient(45deg, transparentize($lightblue, .05), transparent),
@@ -202,6 +213,14 @@ body {
     background-size: 60px 60px;
 }
 
+.checkerboard3 {
+    background-color: $cream;
+    background-image: 
+    linear-gradient(45deg, $lightblue 25%, transparent 25%, transparent 75%, $lightblue 75%, $lightblue),
+    linear-gradient(-45deg, $lightblue 25%, transparent 25%, transparent 75%, $lightblue 75%, $lightblue);
+    background-size: 60px 60px;
+}
+
 .checkerboard_diamonds {
     background-color: $cream;
     background-image: 
@@ -235,11 +254,7 @@ body {
     background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 }
 
-.vertical-stripes {
-    background-color: $cream;
-    background-image: linear-gradient(90deg, transparent 50%, $lightblue 50%);
-    background-size: 50px 50px;
-}
+
 
 .honeycomb {
     background:
