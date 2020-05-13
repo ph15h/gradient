@@ -8,7 +8,7 @@ $white: rgba(255,255,255,1);
 
 body {
     box-sizing: border-box;
-    background: rgba(45,45,45, 1);
+    background: rgba(80,80,80, 1);
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -21,7 +21,7 @@ body {
     height: 100vh;
     gap: 1em;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 33%;
+    grid-auto-rows: 300px;
 
     .grad-div {
         display:flex; 
@@ -84,13 +84,6 @@ body {
     $yellow;
 }
 
-.blue-cream-check {
-    background: 
-    linear-gradient(45deg, transparentize($lightblue, .35), transparent),
-    repeating-linear-gradient(45deg, transparentize($lightblue,0.2) 0%, transparentize($lightblue, .2) 5%, transparent 5%, transparent 10%),
-    rgba(255,253,220, 1) repeating-linear-gradient(-45deg, rgba(225, 243, 255, 0.8) 0%, rgba(203,235,255, .8) 5%, transparent 5%, transparent 10%);
-}
-
 .yellow-white-check {
     background: 
     linear-gradient(45deg, rgba(250, 255, 140, 0.35), transparent),
@@ -98,15 +91,79 @@ body {
     rgba(255,253,220, 1) repeating-linear-gradient(-45deg, rgba(225, 243, 255, 0.8) 0%, rgba(203,235,255, .8) 5%, transparent 5%, transparent 10%);
 }
 
+.connected-diamonds {
+    background: 
+    // linear-gradient(45deg, $lightblue, transparent),
+    repeating-linear-gradient(45deg, transparentize($lightblue,.5) 0%, transparentize($lightblue, .5) 5%, transparent 5%, transparent 10%),
+    $cream repeating-linear-gradient(-45deg, transparentize($lightblue,.5) 0%, transparentize($lightblue,.5) 5%, transparent 5%, transparent 10%);
+}
+
+.separate-diamonds {
+    background: 
+    // linear-gradient(45deg, $lightblue, transparent),
+    repeating-linear-gradient(45deg, $lightblue 0%, $lightblue 5%, transparent 5%, transparent 10%),
+    $cream repeating-linear-gradient(-45deg, $lightblue 0%, $lightblue 5%, transparent 5%, transparent 10%);
+}
+
+// .separate-squares {
+//     background: 
+//     // linear-gradient(45deg, $lightblue, transparent),
+//     repeating-linear-gradient(90deg, $lightblue 0%, $lightblue 5%, transparent 5%, transparent 10%),
+//     $cream repeating-linear-gradient(-90deg, $lightblue 0%, $lightblue 5%, transparent 5%, transparent 10%);
+//     background-size: 50px 50px;
+// }
+
+.connected-squares {
+    background-color:$cream;
+    background-image: linear-gradient(90deg, transparentize($lightblue,.5) 50%, transparent 50%),
+    linear-gradient(transparentize($lightblue,.5) 50%, transparent 50%);
+    background-size:4em 4em;
+}
+
+.separate-squares {
+    background-color: $cream;
+    background-image: 
+    linear-gradient(90deg, $lightblue 50%, transparent 50%),
+    linear-gradient($lightblue 50%, transparent 50%);
+    background-size: 4em 4em;
+}
+
+
 .polka-dot {
     background:
     radial-gradient($cream 20%, transparent 20%),
     radial-gradient($white 30%, transparent 30%),
-    rgba(203,235,255,1);
+    $lightblue;
     background-position: 0 0, 100px 100px;
     background-size: 200px 200px;
-    
     ;
+}
+
+.bokeh {
+    background:
+        radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.15) 30%, rgba(255,255,255,.3) 32%, rgba(255,255,255,0) 33%) 0 0,
+        radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.3) 13%, rgba(255,255,255,0) 14%) 0 0,
+        radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 17%, rgba(255,255,255,.43) 19%, rgba(255,255,255,0) 20%) 0 110px,
+        radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) -130px -170px,
+        radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) 130px 370px,
+        radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.2) 13%, rgba(255,255,255,0) 14%) 0 0,
+        linear-gradient(45deg, $blue 0%, $lightblue 100%);
+    background-size: 470px 470px, 970px 970px, 410px 410px, 610px 610px, 530px 530px, 730px 730px, 100% 100%;
+    background-color: $blue;
+}
+
+.transparent-circles {
+    background-image: 
+    radial-gradient(circle at 29% 55%, transparentize($cream, .75) 0%, transparentize($cream, .75) 4%,transparent 4%, transparent 44%,transparent 44%, transparent 100%),
+    radial-gradient(circle at 85% 89%, transparentize($cream, .75) 0%, transparentize($cream, .75) 51%,transparent 51%, transparent 52%,transparent 52%, transparent 100%),
+    radial-gradient(circle at 6% 90%, transparentize($cream, .75) 0%, transparentize($cream, .75) 53%,transparent 53%, transparent 64%,transparent 64%, transparent 100%),
+    radial-gradient(circle at 35% 75%, transparentize($cream, .75) 0%, transparentize($cream, .75) 6%,transparent 6%, transparent 98%,transparent 98%, transparent 100%),
+    radial-gradient(circle at 56% 75%, transparentize($cream, .75) 0%, transparentize($cream, .75) 16%,transparent 16%, transparent 23%,transparent 23%, transparent 100%),
+    radial-gradient(circle at 42% 0%, transparentize($cream, .75) 0%, transparentize($cream, .75) 3%,transparent 3%, transparent 26%,transparent 26%, transparent 100%),
+    radial-gradient(circle at 29% 28%, transparentize($cream, .75) 0%, transparentize($cream, .75) 51%,transparent 51%, transparent 75%,transparent 75%, transparent 100%),
+    radial-gradient(circle at 77% 21%, transparentize($cream, .75) 0%, transparentize($cream, .75) 35%,transparent 35%, transparent 55%,transparent 55%, transparent 100%),
+    radial-gradient(circle at 65% 91%, transparentize($cream, .75) 0%, transparentize($cream, .75) 46%,transparent 46%, transparent 76%,transparent 76%, transparent 100%),
+    linear-gradient(45deg, $blue,$lightblue);
 }
 
 .polka-dot-lots {
@@ -156,11 +213,11 @@ body {
 
 .checkerboard_diamonds_gradient {
     background:
-        linear-gradient(45deg, transparentize($cream,.5) 75%, white 95%),
-        linear-gradient(45deg, $lightblue 25%, transparent 25%, transparent 75%, $lightblue 75%, $lightblue),
-        linear-gradient(-45deg, $lightblue 25%, transparent 25%, transparent 75%, $lightblue 75%, $lightblue),
-        $cream, 
-;
+    linear-gradient(45deg, transparentize($cream,.5) 75%, white 95%),
+    linear-gradient(45deg, $lightblue 25%, transparent 25%, transparent 75%, $lightblue 75%, $lightblue),
+    linear-gradient(-45deg, $lightblue 25%, transparent 25%, transparent 75%, $lightblue 75%, $lightblue),
+    $cream, 
+    ;
     background-size: 60px 60px;
     background-position: 0 0, 30px 30px;
 }
@@ -168,14 +225,31 @@ body {
 .cubes {
     background-color: $cream;
     background-image: 
-        linear-gradient(30deg, $dblue 12%, transparent 12.5%, transparent 87%, $dblue 87.5%, $dblue),
-        linear-gradient(150deg, $dblue 12%, transparent 12.5%, transparent 87%, $dblue 87.5%, $dblue),
-        linear-gradient(30deg, $dblue 12%, transparent 12.5%, transparent 87%, $dblue 87.5%, $dblue),
-        linear-gradient(150deg, $dblue 12%, transparent 12.5%, transparent 87%, $dblue 87.5%, $dblue),
-        linear-gradient(60deg, $lightblue 25%, transparent 25.5%, transparent 75%, $lightblue 75%, $lightblue),
-        linear-gradient(60deg, $lightblue 25%, transparent 25.5%, transparent 75%, $lightblue 75%, $lightblue);
+    linear-gradient(30deg, $dblue 12%, transparent 12.5%, transparent 87%, $dblue 87.5%, $dblue),
+    linear-gradient(150deg, $dblue 12%, transparent 12.5%, transparent 87%, $dblue 87.5%, $dblue),
+    linear-gradient(30deg, $dblue 12%, transparent 12.5%, transparent 87%, $dblue 87.5%, $dblue),
+    linear-gradient(150deg, $dblue 12%, transparent 12.5%, transparent 87%, $dblue 87.5%, $dblue),
+    linear-gradient(60deg, $lightblue 25%, transparent 25.5%, transparent 75%, $lightblue 75%, $lightblue),
+    linear-gradient(60deg, $lightblue 25%, transparent 25.5%, transparent 75%, $lightblue 75%, $lightblue);
     background-size:80px 140px;
     background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.vertical-stripes {
+    background-color: $cream;
+    background-image: linear-gradient(90deg, transparent 50%, $lightblue 50%);
+    background-size: 50px 50px;
+}
+
+.honeycomb {
+    background:
+    radial-gradient(circle farthest-side at 0% 50%,$cream 23.5%,transparent 0)21px 30px,
+    radial-gradient(circle farthest-side at 0% 50%,$lightblue 24%,transparent 0)19px 30px,
+    linear-gradient($cream 14%,transparent 0, transparent 85%,$cream 0)0 0,
+    linear-gradient(150deg,$cream 24%,$lightblue 0,$lightblue 26%,transparent 0,transparent 74%,$lightblue 0,$lightblue 76%,$cream 0)0 0,
+    linear-gradient(30deg,$cream 24%,$lightblue 0,$lightblue 26%,transparent 0,transparent 74%,$lightblue 0,$lightblue 76%,$cream 0)0 0,
+    linear-gradient(90deg,$lightblue 2%,$cream 0,$cream 98%,$lightblue 0%)0 0 $cream;
+    background-size: 40px 60px;
 }
 
 .carbon {
@@ -194,4 +268,11 @@ body {
     background-image: linear-gradient(45deg, rgba(187, 187, 187,0.04) 0%, rgba(187, 187, 187,0.04) 50%,rgba(86, 86, 86,0.04) 50%, rgba(86, 86, 86,0.04) 100%),linear-gradient(135deg, rgba(166, 166, 166,0.04) 0%, rgba(166, 166, 166,0.04) 50%,rgba(92, 92, 92,0.04) 50%, rgba(92, 92, 92,0.04) 100%),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20)); 
     background-size: 20vh 22vh;
     ;
+}
+
+.blue-cream-check {
+    background: 
+    linear-gradient(45deg, transparentize($cream, .35), transparent),
+    repeating-linear-gradient(45deg, transparentize($cream,0.5) 0%, transparentize($cream, .5) 5%, transparent 5%, transparent 10%),
+    $lightblue repeating-linear-gradient(-45deg, transparentize($cream, .5) 0%, transparentize($cream,.5) 5%, transparent 5%, transparent 10%);
 }
